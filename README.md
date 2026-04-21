@@ -1,28 +1,23 @@
-# 🔧 Lex & YACC Based GCD Parser
+# 🔍 Lex & Yacc Based GCD Parser
 
 ## 📌 Project Overview
 
-This project implements a **GCD (Greatest Common Divisor) computation system** using **Lex and YACC**.
-It parses a simplified C-like syntax and computes the GCD of two numbers using the **Euclidean Algorithm**.
+This project demonstrates the implementation of a parser using **Lex and Yacc** to compute the **Greatest Common Divisor (GCD)** of given inputs.
+
+It showcases fundamental concepts of:
+
+* Compiler Design
+* Lexical Analysis
+* Syntax Parsing
 
 ---
 
-## 🎯 Objectives
-
-* Design a grammar for a structured programming language subset
-* Implement lexical analysis using **Lex**
-* Perform syntax analysis using **YACC**
-* Generate and display a **Parsing Table**
-* Compute GCD using parsed input
-
----
-
-## 🧠 Technologies Used
+## ⚙️ Technologies Used
 
 * C Programming
 * Lex (Flex)
-* YACC (Bison)
-* Ubuntu / Linux Terminal
+* Yacc (Bison)
+* GCC Compiler
 
 ---
 
@@ -30,48 +25,48 @@ It parses a simplified C-like syntax and computes the GCD of two numbers using t
 
 ```
 CD-Project/
-├── lex.l                  # Lex file (token definitions)
-├── yacc.y                 # YACC file (grammar rules)
-├── table.c                # Parsing table generator
-├── parsing_table.txt      # Output parsing table
-├── input.txt              # Sample input
-├── README.md              # Project documentation
-├── yacc.output            # YACC state details (optional)
+│── gcd.l        # Lex file (tokenizer)
+│── gcd.y        # Yacc file (parser)
+│── table.c      # Supporting C code
+│── grammar.txt  # Grammar rules
+│── input.txt    # Sample input
+│── README.md    # Project documentation
 ```
 
 ---
 
-## ⚙️ How to Run
+## 🚀 How to Run
 
-### 1️⃣ Compile Lex and YACC
+### 1️⃣ Compile the Lex file
 
-```bash
-lex lex.l
-yacc -d yacc.y
-gcc lex.yy.c y.tab.c -o parser
+```
+lex gcd.l
 ```
 
-### 2️⃣ Run Parser
+### 2️⃣ Compile the Yacc file
 
-```bash
-./parser < input.txt
+```
+yacc -d gcd.y
 ```
 
-### 3️⃣ Generate Parsing Table
+### 3️⃣ Compile using GCC
 
-```bash
-gcc table.c -o table
-./table > parsing_table.txt
+```
+gcc lex.yy.c y.tab.c -o gcd
+```
+
+### 4️⃣ Run the program
+
+```
+./gcd < input.txt
 ```
 
 ---
 
-## 📊 Parsing Table
+## 🧠 Working
 
-* The parsing table consists of:
-
-  * **ACTION** (shift, reduce, accept)
-  * **GOTO** (state transitions)
-* A simplified version is included in `parsing_table.txt`
+* Lex analyzes input and generates tokens
+* Yacc parses tokens using grammar rules
+* The program computes the **GCD** based on parsed input
 
 ---
